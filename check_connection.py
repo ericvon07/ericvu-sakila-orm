@@ -1,6 +1,8 @@
 from sqlalchemy import text
 from connection.db import create_source_sessionmaker
 
+# Debugging purposes only
+
 Session = create_source_sessionmaker()
 
 with Session() as session:
