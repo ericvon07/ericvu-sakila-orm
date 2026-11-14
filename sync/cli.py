@@ -5,6 +5,9 @@ import sys
 from connection.db import create_source_sessionmaker, create_target_sessionmaker
 from sync.init import run_init
 
+from sync.full_load import run_full_load
+from sync.incremental import run_incremental
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("sync")
 
@@ -32,6 +35,10 @@ def main() -> int:
         with Source() as source, Target() as target:
             if args.command == "init":
                 run_init(source, target)
+            elif args.command == "full-load":
+                run_full_load(source, target)
+            elif args.command == "incremental":
+                run_incremental(source, target)
             else:
                 raise NotImplementedError(args.command)
             target.commit()  # 1 transaction per execution
