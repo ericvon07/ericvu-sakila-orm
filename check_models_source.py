@@ -4,6 +4,7 @@ from connection.db import create_source_sessionmaker
 from models.source import Address, City, Country, Customer, SourceBase
 
 # Note for grading: I used generative AI to build this test script for the models module.
+# Debugging purposes only
 
 EXPECTED = {
     "film": 1000,
