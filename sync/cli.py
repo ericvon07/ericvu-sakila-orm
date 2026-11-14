@@ -13,7 +13,7 @@ from sync.validate import run_validate, check_consistency
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("sync")
 
-# Note for Grading: I used generative AI to help me build the CLI pipeline.
+# Note for Grading: I used generative AI to help me build/debug the CLI pipeline structure.
 # On init.py, using AI to learn more about logging lib helped me implement it here.
 # However, I also used Generative AI in cli.py to help me implement the argparse structure
 # And to review the code implementation overall.

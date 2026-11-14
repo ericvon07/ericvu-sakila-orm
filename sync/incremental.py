@@ -72,7 +72,7 @@ def run_incremental(source: Session, target: Session) -> None:
     # Read the new markers BEFORE data.
     new_markers = read_source_markers(source)
 
-    # 2-4. Query only the rows changed since the marker, then upsert them.
+    # Query only the rows changed since the marker, then upsert them.
     # Each target table watches every source table its columns come from.
 
     # Dimensions
