@@ -6,6 +6,11 @@ from decimal import Decimal
 # To check PKs and FKs on Docker Container:
 # grep -E "CREATE TABLE|PRIMARY KEY|FOREIGN KEY" docker/initdb/01-sakila-schema.sql
 
+# Third party sources used:
+
+# https://docs.sqlalchemy.org/en/21/orm/declarative_styles.html -> learned about what a declarative base is
+# https://docs.sqlalchemy.org/en/21/orm/mapping_styles.html -> Learned how to implement the Mapped[xx] datatype structure. And the mapped_column() function.
+
 
 class SourceBase(DeclarativeBase):
     pass
