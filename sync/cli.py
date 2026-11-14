@@ -7,6 +7,7 @@ from sync.init import run_init
 
 from sync.full_load import run_full_load
 from sync.incremental import run_incremental
+from sync.validate import run_validate
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("sync")
@@ -39,6 +40,8 @@ def main() -> int:
                 run_full_load(source, target)
             elif args.command == "incremental":
                 run_incremental(source, target)
+            elif args.command == "validate":
+                run_validate(source, target)
             else:
                 raise NotImplementedError(args.command)
             target.commit()  # 1 transaction per execution
